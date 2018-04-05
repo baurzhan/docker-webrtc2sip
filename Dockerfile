@@ -19,4 +19,5 @@ RUN git clone https://github.com/DoubangoTelecom/webrtc2sip.git
 RUN cd webrtc2sip && ./autogen.sh \
     && ./configure CFLAGS='-lpthread' LDFLAGS='-ldl' LIBS='-ldl' \
     && make && make install
+RUN rm opus-1.0.2.tar.gz && rm -r opus-1.0.2 && rm -r doubango && rm -r webrtc2sip
 CMD webrtc2sip --config=/etc/webrtc2sip/config.xml
